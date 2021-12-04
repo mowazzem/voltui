@@ -14,12 +14,13 @@ func main() {
 	}
 	defer ui.Close()
 
+	p := helpDialog()
+
 	vol, err := volgo.GetVolume()
 	if err != nil {
 		panic("error")
 	}
 
-	p := helpDialog()
 	g0 := volumeBarDialog(vol)
 
 	draw(p, g0)
